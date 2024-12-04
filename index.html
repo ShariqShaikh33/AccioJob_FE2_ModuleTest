@@ -23,10 +23,10 @@
 
             <div class="inputContainer">
                 <label class="inputLabel">Enter Age</label>
-                <input class="input" type="text" id="inputAge">
+                <input class="input" type="Number" min="18" max="65" id="inputAge">
             </div>
         </form>
-        <button id="addUserButton">Add User</button>
+        <button id="addEmployeeButton">Add User</button>
     </div>
 
     <div class="mainMessageDiv main">
@@ -37,27 +37,7 @@
     <div class="mainOutputDiv main">
         <h1>Added Employees</h1>
         <div id="placeholder">You have 0 Employees</div>
-        <div class="employeesDiv">
-            <div class="employeeAddedDiv">
-                <div class="employeeInfoDiv">
-                    <p class="Eid">1.</p>
-                    <p class="Ename">Name: John</p>
-                    <p class="Eprofession">Profession: Developer</p>
-                    <p class="Eage">Age: 18</p>
-                </div>
-                <button class="deleteEmployeeButton">Delete User</button>
-            </div>
-
-            <div class="employeeAddedDiv">
-                <div class="employeeInfoDiv">
-                    <p class="Eid">1.</p>
-                    <p class="Ename">Name: John</p>
-                    <p class="Eprofession">Profession: Developer</p>
-                    <p class="Eage">Age: 18</p>
-                </div>
-                <button class="deleteEmployeeButton">Delete User</button>
-            </div>
-        </div>
+        <ol id="list" class="employeesDiv" type="none"></ol>
 
 
     </div>
