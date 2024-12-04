@@ -9,6 +9,7 @@ document.getElementById("success").style.display = "none";
 
 const addEmployee = () =>{
     return new Promise((Resolve, Reject) =>{
+        var id = employeeArray.length+1;
         var name = document.getElementById("inputName").value;
         var profession = document.getElementById("inputProfession").value;
         var age = document.getElementById("inputAge").value;
@@ -17,7 +18,7 @@ const addEmployee = () =>{
             Reject("Rejected");
         }
         else{
-            let employeeEntry = {Name:name , Profession: profession , Age:age};
+            let employeeEntry = {Id:id , Name:name , Profession: profession , Age:age};
             employeeArray.push(employeeEntry);
             Resolve(employeeArray);
         } 
@@ -43,26 +44,33 @@ const displayList = (arr) =>{
 const remove = (id) => {
     let li = document.getElementById(id);
     li.remove();
+    removeFromArray(employeeArray, id-1);
     let list = document.getElementById("list");
     if(list.innerHTML===""){
         document.getElementById("placeholder").style.display = "block";
     }
 }
 
+const removeFromArray = (arr,index) => {
+    arr.splice(index-1,1);
+    return arr;
+}
+
 
 let success = document.getElementById("success"); 
 
 addBtn.addEventListener('click', function(employeeArray){
-    addEmployee().then(res=>{
+    addEmployee(employeeArray).then(res=>{
         document.getElementById("success").style.display = "block";
         document.getElementById("failure").style.display = "none";
         document.getElementById("placeholder").style.display = "none";
-        
+        console.log(res);
         displayList(res);
     }).catch(err => {
         document.getElementById("success").style.display = "none";
         document.getElementById("failure").style.display = "block";
         console.log(err);
+        console.log(employeeArray);
     });
 });
 
