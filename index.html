@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="mainInputDiv main">
+        <h1>New Employess</h1>
+        <form class="form">
+            <div class="inputContainer">
+                <label class="inputLabel">Enter Name</label>
+                <input class="input" type="text" id="inputName">
+            </div>
+
+            <div class="inputContainer">
+                <label class="inputLabel">Enter Profession</label>
+                <input class="input" type="text" id="inputProfession">
+            </div>
+
+            <div class="inputContainer">
+                <label class="inputLabel">Enter Age</label>
+                <input class="input" type="text" id="inputAge">
+            </div>
+        </form>
+        <button id="addUserButton">Add User</button>
+    </div>
+
+    <div class="mainMessageDiv main">
+        <p id="failure" class="failure">Error : Please Make sure All the fields are filled before adding in an employee !</p>
+        <p id="success" class="success">Success : Employee Added!</p>
+    </div>
+
+    <div class="mainOutputDiv main">
+        <h1>Added Employees</h1>
+        <div id="placeholder">You have 0 Employees</div>
+        <div class="employeesDiv">
+            <div class="employeeAddedDiv">
+                <div class="employeeInfoDiv">
+                    <p class="Eid">1.</p>
+                    <p class="Ename">Name: John</p>
+                    <p class="Eprofession">Profession: Developer</p>
+                    <p class="Eage">Age: 18</p>
+                </div>
+                <button class="deleteEmployeeButton">Delete User</button>
+            </div>
+
+            <div class="employeeAddedDiv">
+                <div class="employeeInfoDiv">
+                    <p class="Eid">1.</p>
+                    <p class="Ename">Name: John</p>
+                    <p class="Eprofession">Profession: Developer</p>
+                    <p class="Eage">Age: 18</p>
+                </div>
+                <button class="deleteEmployeeButton">Delete User</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="basic.js"></script>
+</body>
+</html>
